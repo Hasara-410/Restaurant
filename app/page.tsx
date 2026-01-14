@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import PopularCategories from "./components/PopularCategories";
 import SearchBar from "./components/SearchBar";
-
+import Link from "next/link";
 
 type MenuItem = {
   id: string;
@@ -97,20 +97,28 @@ export default function Home() {
 
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {filteredItems.slice(0, 6).map((item) => (
-              <div key={item.id} className="rounded-2xl bg-white p-4 shadow">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="h-52 w-full rounded-xl object-cover"
-                />
-                <h3 className="mt-4 text-lg font-bold">{item.name}</h3>
-                <p className="mt-1 text-sm text-gray-500">{item.description}</p>
+  {filteredItems.slice(0, 6).map((item) => {
+    if (!item?.id) return null;
 
-                <div className="mt-3 font-bold text-green-600">${item.price}</div>
-              </div>
-            ))}
-          </div>
+    return (
+      <Link key={item.id} href={`/item/${item.id}`} className="block">
+        <div className="rounded-2xl bg-white p-4 shadow hover:shadow-lg transition">
+          <img
+            src={item.image}
+            alt={item.name}
+            className="h-52 w-full rounded-xl object-cover"
+          />
+          <h3 className="mt-4 text-lg font-bold">{item.name}</h3>
+          <p className="mt-1 text-sm text-gray-500">{item.description}</p>
+          <div className="mt-3 font-bold text-green-600">${item.price}</div>
+        </div>
+      </Link>
+    );
+  })}
+</div>
+
+
+          
         </section>
       </main>
     </div>
