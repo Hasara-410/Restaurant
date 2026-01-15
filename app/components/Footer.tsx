@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="bg-white text-black mt-20">
       <div className="mx-auto max-w-6xl px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
         
-        {/* Logo & About */}
+        
         <div>
           <h2 className="text-2xl font-bold mb-3">
             <img
@@ -18,7 +18,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Links */}
+        
         <div>
           <h3 className="font-semibold mb-3">Company</h3>
           <ul className="space-y-2 text-sm text-black/70">
@@ -29,7 +29,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Support */}
+        
         <div>
           <h3 className="font-semibold mb-3">Support</h3>
           <ul className="space-y-2 text-sm text-black/70">
@@ -40,7 +40,7 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Social */}
+        
         <div>
           <h3 className="font-semibold mb-3">Follow Us</h3>
           <div className="flex gap-4">
