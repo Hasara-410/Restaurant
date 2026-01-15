@@ -139,7 +139,10 @@ export default function Home() {
                       className="h-52 w-full rounded-xl object-cover"
                     />
 
-                    <h3 className="mt-4 text-lg font-bold">{item.name}</h3>
+                   <h3 className="mt-4 text-lg font-bold text-gray-900">
+  {item.name}
+</h3>
+
 
                     {/* ✅ Dietary badges + Spicy indicator */}
                     <div className="mt-2 flex flex-wrap gap-2">
