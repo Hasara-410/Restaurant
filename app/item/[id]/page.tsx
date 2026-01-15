@@ -19,9 +19,7 @@ const API_BASE =
 
 async function getItem(id: string): Promise<MenuItem | null> {
   try {
-    const res = await fetch(`${API_BASE}/menuItems/${id}`, {
-      cache: "no-store",
-    });
+    const res = await fetch(`${API_BASE}/menuItems/${id}`, { cache: "no-store" });
     if (!res.ok) return null;
     return await res.json();
   } catch {
@@ -57,16 +55,21 @@ export default async function ItemPage(props: any) {
   const spicy = item.spicyLevel ?? 0;
 
   return (
-    <div className="min-h-screen bg-[#0b0b0b] text-white">
+    <div className="min-h-screen bg-white text-gray-700">
+      {/* Top */}
       <div className="max-w-6xl mx-auto px-6 pt-8">
-        <Link href="/" className="underline text-white/70">
-          ← Back to menu
+        <Link
+          href="/"
+          className="inline-flex items-center rounded-xl border border-green-500 px-4 py-2 font-semibold text-green-600 hover:bg-green-500 hover:text-white transition"
+        >
+        Back To Home
         </Link>
       </div>
 
+      {/* Content */}
       <div className="max-w-6xl mx-auto px-6 py-10 grid lg:grid-cols-2 gap-10">
         {/* Image */}
-        <div className="bg-white/5 p-6 rounded-2xl">
+        <div className="bg-black/5 p-6 rounded-2xl border border-black/10">
           <img
             src={item.image}
             alt={item.name}
@@ -76,21 +79,22 @@ export default async function ItemPage(props: any) {
 
         {/* Info */}
         <div>
-          <p className="text-sm uppercase text-white/60">{item.category}</p>
-          <h1 className="text-4xl font-bold mt-2">{item.name}</h1>
+          <p className="text-sm uppercase text-black/60">{item.category}</p>
+
+          <h1 className="text-4xl font-bold mt-2 text-gray-900">{item.name}</h1>
 
           {item.popular && (
-            <span className="inline-block mt-2 px-3 py-1 bg-green-500 text-black rounded-full text-sm">
+            <span className="inline-block mt-3 px-3 py-1 bg-green-500 text-white rounded-full text-sm font-semibold">
               Popular
             </span>
           )}
 
-          <div className="mt-4 text-3xl font-bold text-green-400">
+          <div className="mt-5 text-3xl font-bold text-green-600">
             ${item.price.toFixed(2)}
           </div>
 
           {item.preparationTime && (
-            <p className="mt-2 text-white/60">
+            <p className="mt-2 text-black/60">
               ⏱ {item.preparationTime} minutes
             </p>
           )}
@@ -101,7 +105,7 @@ export default async function ItemPage(props: any) {
               {item.dietary.map((d) => (
                 <span
                   key={d}
-                  className="px-3 py-1 bg-white/10 rounded-full text-sm"
+                  className="px-3 py-1 bg-black/10 rounded-full text-sm text-gray-800"
                 >
                   {d}
                 </span>
@@ -109,26 +113,47 @@ export default async function ItemPage(props: any) {
             </div>
           )}
 
-          <div className="mt-6">
-            <h3 className="font-semibold mb-2">Description</h3>
-            <p className="text-white/70">{item.description}</p>
+          {/* Description */}
+          <div className="mt-8">
+            <h3 className="font-semibold mb-2 text-gray-900">Description</h3>
+            <p className="text-black/70 leading-relaxed">{item.description}</p>
           </div>
 
           {/* Spicy */}
-          <div className="mt-6">
-            <p className="mb-2">Spicy Level: {spicy}/5</p>
-            <input type="range" min={0} max={5} value={spicy} readOnly />
+          <div className="mt-8">
+            <div className="flex items-center justify-between">
+              <h3 className="font-semibold text-gray-900">Spicy Level</h3>
+
+            </div>
+
+            
+
+            <input
+              className="mt-4 w-full accent-red-500"
+              type="range"
+              min={0}
+              max={5}
+              value={spicy}
+              readOnly
+            />
           </div>
 
           {/* Buttons */}
-          <div className="mt-8 flex gap-3 flex-col sm:flex-row">
-            <AddToCartButton item={item} />
+          <div className="mt-10 flex gap-3 flex-col sm:flex-row">
+            {/* Add to cart button wrapper frame */}
+            <div className="flex-1 text-center rounded-xl border-2 border-green-500 py-1">
+  <AddToCartButton item={item} />
+</div>
+
+
+            {/* Checkout button with frame */}
             <Link
-              href="/cart"
-              className="text-center border border-white/20 rounded-xl py-3 font-semibold hover:bg-white/10"
-            >
-              Checkout Now
-            </Link>
+  href="/cart"
+  className="flex-1 flex items-center justify-center rounded-xl border-2 border-green-500 py-3 font-semibold text-gray-900 hover:bg-gray-100 transition"
+>
+  Checkout Now
+</Link>
+
           </div>
         </div>
       </div>
