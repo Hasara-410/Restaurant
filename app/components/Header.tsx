@@ -17,7 +17,7 @@ export default function Header({
   active: string;
   onChange: (v: string) => void;
 }) {
-  const { totalQty } = useCart(); // ✅ cart badge count
+  const { count } = useCart(); // ✅ correct name
 
   return (
     <header className="w-full bg-white">
@@ -42,22 +42,21 @@ export default function Header({
           ))}
         </nav>
 
-        {/* Right Side Buttons */}
+        {/* Right Side */}
         <div className="flex items-center gap-3">
-          {/* ✅ Cart Button + Badge */}
+          {/* Cart Button + Badge */}
           <Link
             href="/cart"
             className="relative rounded-full border border-gray-200 px-5 py-2 text-sm font-semibold text-gray-800 hover:bg-gray-100"
           >
             Cart
-            {totalQty > 0 && (
+            {count > 0 && (
               <span className="absolute -top-2 -right-2 rounded-full bg-green-500 px-2 py-1 text-xs font-bold text-black">
-                {totalQty}
+                {count}
               </span>
             )}
           </Link>
 
-          {/* Contact Button */}
           <button className="rounded-full bg-green-500 px-6 py-2 text-sm font-semibold text-white">
             Contact
           </button>
