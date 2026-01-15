@@ -105,30 +105,30 @@ export default function MenuListPage() {
           <h1 className="text-3xl font-extrabold text-gray-900">
             Menu Items List
           </h1>
-          <p className="text-sm text-gray-500 mt-1">
+          <p className="text-sm text-green-500 mt-1">
             {loading ? "Loading..." : `${filtered.length} items found`}
           </p>
         </div>
 
         <Link
           href="/"
-          className="rounded-xl border border-gray-200 px-4 py-2 hover:bg-gray-50"
+          className="rounded-xl border border-green-500 px-4 py-2 hover:bg-green-500"
         >
-          ← Back Home
+          Back Home
         </Link>
       </div>
 
       {/* Filters */}
       <div className="mx-auto max-w-6xl px-6">
-        <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+        <div className="rounded-2xl border border-green-500 bg-white p-5 shadow-sm">
           <div className="grid gap-4 md:grid-cols-4">
             {/* Search */}
             <div>
-              <label className="text-xs font-semibold text-gray-600">
+              <label className="text-xs font-semibold text-gray-700">
                 Search
               </label>
               <input
-                className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 outline-none focus:ring-2 focus:ring-green-200"
+                className="mt-1 w-full rounded-xl border border-green-500 px-3 py-2 outline-none focus:ring-2 focus:ring-green-200"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search dishes..."
@@ -141,7 +141,7 @@ export default function MenuListPage() {
                 Min Price
               </label>
               <input
-                className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 outline-none focus:ring-2 focus:ring-green-200"
+                className="mt-1 w-full rounded-xl border border-green-500 px-3 py-2 outline-none focus:ring-2 focus:ring-green-200"
                 value={minPrice}
                 onChange={(e) => setMinPrice(e.target.value)}
                 placeholder="e.g. 5"
@@ -154,7 +154,7 @@ export default function MenuListPage() {
                 Max Price
               </label>
               <input
-                className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 outline-none focus:ring-2 focus:ring-green-200"
+                className="mt-1 w-full rounded-xl border border-green-500 px-3 py-2 outline-none focus:ring-2 focus:ring-green-200"
                 value={maxPrice}
                 onChange={(e) => setMaxPrice(e.target.value)}
                 placeholder="e.g. 20"
@@ -168,7 +168,7 @@ export default function MenuListPage() {
                 Dietary
               </label>
               <select
-                className="mt-1 w-full rounded-xl border border-gray-200 px-3 py-2 outline-none focus:ring-2 focus:ring-green-200"
+                className="mt-1 w-full rounded-xl border border-green-500 px-3 py-2 outline-none focus:ring-2 focus:ring-green-200"
                 value={dietary}
                 onChange={(e) => setDietary(e.target.value)}
               >
@@ -183,13 +183,13 @@ export default function MenuListPage() {
           {/* Sort row */}
           <div className="mt-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             <div className="text-sm text-gray-500">
-              Tip: combine filters + sort for faster results.
+             
             </div>
 
             <div className="flex items-center gap-2">
               <span className="text-xs font-semibold text-gray-600">Sort</span>
               <select
-                className="rounded-xl border border-gray-200 px-3 py-2 outline-none focus:ring-2 focus:ring-green-200"
+                className="rounded-xl border border-green-500 px-3 py-2 outline-none focus:ring-2 focus:ring-green-200"
                 value={sort}
                 onChange={(e) => setSort(e.target.value)}
               >
