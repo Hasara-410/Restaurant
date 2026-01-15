@@ -23,18 +23,24 @@ export default function Hero({
           </p>
 
           {/* Search Bar (Hero style) */}
-          <div className="mt-7 flex w-full max-w-sm items-center overflow-hidden rounded-full border border-gray-200 bg-white shadow-sm">
-            <span className="pl-4 text-gray-400">🔎</span>
-            <input
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search..."
-              className="w-full px-3 py-3 text-sm outline-none"
-            />
-            <button className="m-1 rounded-full bg-green-500 px-5 py-2 text-sm font-semibold text-white hover:opacity-90">
-              Search
-            </button>
-          </div>
+          {/* Search Bar (UI Style) */}
+<div className="mt-7 w-full max-w-sm">
+  <div className="flex items-center rounded-full bg-green-500 px-2 py-1 shadow-lg">
+   <img
+  src="/search.png"
+  alt="search"
+  className="ml-3 h-4 w-4"
+/>
+    <input
+      value={search}
+      onChange={(e) => setSearch(e.target.value)}
+      placeholder="Search..."
+      className="ml-2 flex-1 bg-transparent px-2 py-2 text-sm text-white placeholder-white outline-none"
+    />
+    
+  </div>
+</div>
+
         </div>
 
         {/* RIGHT */}

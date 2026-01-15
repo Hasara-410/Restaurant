@@ -9,12 +9,12 @@ export default function SearchBar({
 }) {
   return (
     <div className="mt-6 flex w-full max-w-md items-center gap-2 rounded-full bg-green-500 px-4 py-2">
-      <span className="text-white text-sm">🔍</span>
+      <span className="text-white text-sm"></span>
       <input
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder="Search..."
-        className="w-full bg-transparent text-white placeholder-white/80 outline-none"
+        className="w-full bg-transparent text-ash placeholder-white/80 outline-none"
       />
       {value && (
         <button
