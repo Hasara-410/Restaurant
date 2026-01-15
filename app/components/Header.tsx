@@ -17,12 +17,13 @@ export default function Header({
   active: string;
   onChange: (v: string) => void;
 }) {
-  const { count } = useCart(); // ✅ correct name
+  const { count } = useCart(); 
 
   return (
     <header className="w-full bg-white">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-        {/* Logo */}
+
+        {/* This is logo */}
         <Link href="/" className="flex items-center gap-2">
   <img
     src="/logo.png"
@@ -32,7 +33,7 @@ export default function Header({
 </Link>
 
 
-        {/* Tabs */}
+        
         <nav className="hidden gap-10 md:flex">
           {tabs.map((t) => (
             <button
@@ -47,9 +48,9 @@ export default function Header({
           ))}
         </nav>
 
-        {/* Right Side */}
+      
         <div className="flex items-center gap-3">
-          {/* Cart Button + Badge */}
+         
      <Link
   href="/cart"
   className="relative flex items-center gap-2 rounded-full border border-gray-200 px-5 py-2 text-sm font-semibold text-gray-800 hover:bg-gray-100"

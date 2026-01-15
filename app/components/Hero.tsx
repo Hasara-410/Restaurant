@@ -10,7 +10,7 @@ export default function Hero({
   return (
     <section className="w-full bg-white">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 py-10 md:grid-cols-2">
-        {/* LEFT */}
+        {/* left side */}
         <div>
           <h1 className="text-4xl font-extrabold leading-tight text-gray-900 md:text-5xl">
             Dive into Delights <br />
@@ -22,8 +22,7 @@ export default function Hero({
             Craftsmanship
           </p>
 
-          {/* Search Bar (Hero style) */}
-          {/* Search Bar (UI Style) */}
+         
 <div className="mt-7 w-full max-w-sm">
   <div className="flex items-center rounded-full bg-green-500 px-2 py-1 shadow-lg">
    <img
@@ -43,18 +42,18 @@ export default function Hero({
 
         </div>
 
-        {/* RIGHT */}
+        {/* right side */}
         <div className="relative flex justify-center md:justify-end">
           
 
-          {/* Hero Image */}
+         
           <img
             src="/hero.png"
             alt="Hero"
             className="relative z-10 w-[320px] md:w-90"
           />
 
-          {/* Small bubble */}
+          
           <div className="absolute left-2 top-10 z-20 rounded-full bg-white px-4 py-2 text-xs shadow">
             Hot spicy Food 🌶️
           </div>
