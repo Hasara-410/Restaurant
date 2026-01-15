@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import PopularCategories from "./components/PopularCategories";
 import SearchBar from "./components/SearchBar";
 import Link from "next/link";
+import Hero from "./components/Hero";
+
 
 type MenuItem = {
   id: string;
@@ -81,8 +83,9 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <Header active={activeCategory} onChange={setActiveCategory} />
 
-      <main className="mx-auto max-w-6xl px-6 py-10">
-        <SearchBar value={search} onChange={setSearch} />
+<Hero search={search} setSearch={setSearch} />
+
+<main className="mx-auto max-w-6xl px-6 py-10">
 
         {/* Popular Categories section */}
         <PopularCategories items={allItems} onSelect={setActiveCategory} />
