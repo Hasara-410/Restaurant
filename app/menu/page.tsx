@@ -18,16 +18,16 @@ export default function MenuListPage() {
   const base =
     process.env.NEXT_PUBLIC_API_BASE_URL?.trim() || "http://localhost:3001";
 
-  // filters
+  
   const [search, setSearch] = useState("");
   const [minPrice, setMinPrice] = useState<string>("");
   const [maxPrice, setMaxPrice] = useState<string>("");
   const [dietary, setDietary] = useState<string>("all");
 
-  // sort
+  
   const [sort, setSort] = useState<string>("name_asc");
 
-  // data states
+  
   const [items, setItems] = useState<MenuItem[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -99,7 +99,7 @@ export default function MenuListPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Top bar */}
+      
       <div className="mx-auto max-w-6xl px-6 py-8 flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-extrabold text-gray-900">
@@ -118,11 +118,11 @@ export default function MenuListPage() {
         </Link>
       </div>
 
-      {/* Filters */}
+     
       <div className="mx-auto max-w-6xl px-6">
         <div className="rounded-2xl border border-green-500 bg-white p-5 shadow-sm">
           <div className="grid gap-4 md:grid-cols-4">
-            {/* Search */}
+           
             <div>
               <label className="text-xs font-semibold text-gray-700">
                 Search
@@ -135,7 +135,7 @@ export default function MenuListPage() {
               />
             </div>
 
-            {/* Price range */}
+            
             <div>
               <label className="text-xs font-semibold text-gray-600">
                 Min Price
@@ -162,7 +162,7 @@ export default function MenuListPage() {
               />
             </div>
 
-            {/* Dietary */}
+            
             <div>
               <label className="text-xs font-semibold text-gray-600">
                 Dietary
@@ -180,7 +180,7 @@ export default function MenuListPage() {
             </div>
           </div>
 
-          {/* Sort row */}
+        
           <div className="mt-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             <div className="text-sm text-gray-500">
              
@@ -202,14 +202,14 @@ export default function MenuListPage() {
           </div>
         </div>
 
-        {/* Error */}
+        
         {error && (
           <p className="mt-4 rounded-xl bg-red-50 p-4 text-red-600">
             Error: {error} (Check backend: http://localhost:3001/menuItems)
           </p>
         )}
 
-        {/* Grid */}
+        
         <div className="mt-8 grid gap-6 md:grid-cols-3">
           {!loading &&
             !error &&
@@ -253,10 +253,10 @@ export default function MenuListPage() {
             ))}
         </div>
 
-        {/* Loading */}
+      
         {loading && <p className="mt-6 text-gray-500">Loading items...</p>}
 
-        {/* Empty */}
+        
         {!loading && !error && filtered.length === 0 && (
           <p className="mt-6 text-gray-500">No matching items found.</p>
         )}

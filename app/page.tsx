@@ -79,14 +79,14 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       
 
-      {/* Hero with search */}
+      
       <Hero search={search} setSearch={setSearch} />
 
       <main className="mx-auto max-w-6xl px-6 py-10">
-        {/* Categories */}
+        
         <PopularCategories items={allItems} onSelect={setActiveCategory} />
 
-        {/* Dishes */}
+       
         <section className="mt-20">
           <p className="text-xs font-semibold tracking-[0.25em] text-red-400">
             SPECIAL DISHES
@@ -105,7 +105,7 @@ export default function Home() {
             </Link>
           </div>
 
-          {/* Status */}
+          
           <p className="mt-4 text-sm text-gray-500">
             {loading ? "Loading items..." : `${filteredItems.length} items found`}
           </p>
@@ -120,7 +120,7 @@ export default function Home() {
             <p className="mt-6 text-gray-500">No items found.</p>
           )}
 
-          {/* Cards */}
+        
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {filteredItems.map((item) => {
               if (!item.id) return null;
@@ -138,7 +138,7 @@ export default function Home() {
                       {item.name}
                     </h3>
 
-                    {/* Badges */}
+                
                     <div className="mt-2 flex flex-wrap gap-2">
                       {item.dietary?.map((d) => (
                         <span
