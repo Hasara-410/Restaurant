@@ -80,7 +80,7 @@ export default function CartPage() {
                       −
                     </button>
 
-                    <span className="min-w-[32px] text-center font-semibold">
+                    <span className="min-w-8 text-center font-semibold">
                       {it.qty}
                     </span>
 
