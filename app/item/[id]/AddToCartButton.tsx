@@ -24,7 +24,7 @@ export default function AddToCartButton({ item }: { item: Item }) {
           },
           1
         );
-        alert("Added to cart ✅");
+        alert("Added to cart successfully ...");
       }}
       className="flex-1 bg-white text-black rounded-xl py-3 font-semibold hover:opacity-90"
     >

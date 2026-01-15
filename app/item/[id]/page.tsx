@@ -56,7 +56,7 @@ export default async function ItemPage(props: any) {
 
   return (
     <div className="min-h-screen bg-white text-gray-700">
-      {/* Top */}
+     
       <div className="max-w-6xl mx-auto px-6 pt-8">
         <Link
           href="/"
@@ -66,9 +66,9 @@ export default async function ItemPage(props: any) {
         </Link>
       </div>
 
-      {/* Content */}
+     
       <div className="max-w-6xl mx-auto px-6 py-10 grid lg:grid-cols-2 gap-10">
-        {/* Image */}
+        
         <div className="bg-black/5 p-6 rounded-2xl border border-black/10">
           <img
             src={item.image}
@@ -77,7 +77,7 @@ export default async function ItemPage(props: any) {
           />
         </div>
 
-        {/* Info */}
+        
         <div>
           <p className="text-sm uppercase text-black/60">{item.category}</p>
 
@@ -99,7 +99,7 @@ export default async function ItemPage(props: any) {
             </p>
           )}
 
-          {/* Dietary */}
+         
           {item.dietary && item.dietary.length > 0 && (
             <div className="mt-4 flex gap-2 flex-wrap">
               {item.dietary.map((d) => (
@@ -113,13 +113,13 @@ export default async function ItemPage(props: any) {
             </div>
           )}
 
-          {/* Description */}
+          
           <div className="mt-8">
             <h3 className="font-semibold mb-2 text-gray-900">Description</h3>
             <p className="text-black/70 leading-relaxed">{item.description}</p>
           </div>
 
-          {/* Spicy */}
+          
           <div className="mt-8">
             <div className="flex items-center justify-between">
               <h3 className="font-semibold text-gray-900">Spicy Level</h3>
@@ -138,15 +138,15 @@ export default async function ItemPage(props: any) {
             />
           </div>
 
-          {/* Buttons */}
+          
           <div className="mt-10 flex gap-3 flex-col sm:flex-row">
-            {/* Add to cart button wrapper frame */}
+            
             <div className="flex-1 text-center rounded-xl border-2 border-green-500 py-1">
   <AddToCartButton item={item} />
 </div>
 
 
-            {/* Checkout button with frame */}
+            
             <Link
   href="/cart"
   className="flex-1 flex items-center justify-center rounded-xl border-2 border-green-500 py-3 font-semibold text-gray-900 hover:bg-gray-100 transition"
