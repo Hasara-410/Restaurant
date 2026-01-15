@@ -1,11 +1,11 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import Header from "./components/Header";
+
 import PopularCategories from "./components/PopularCategories";
 import Link from "next/link";
 import Hero from "./components/Hero";
-import Footer from "./components/Footer";
+
 
 type MenuItem = {
   id: string;
@@ -77,7 +77,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header active={activeCategory} onChange={setActiveCategory} />
+      
 
       {/* Hero with search */}
       <Hero search={search} setSearch={setSearch} />
@@ -170,8 +170,7 @@ export default function Home() {
         </section>
       </main>
 
-      {/* Footer at correct place */}
-      <Footer />
+     
     </div>
   );
 }
