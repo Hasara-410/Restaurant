@@ -112,9 +112,9 @@ export default function MenuListPage() {
 
         <Link
           href="/"
-          className="rounded-xl border border-green-500 px-4 py-2 hover:bg-green-500"
+          className="inline-flex items-center rounded-xl border border-green-500 px-4 py-2 font-semibold text-green-600 hover:bg-green-500 hover:text-white transition"
         >
-          Back Home
+        Back To Home
         </Link>
       </div>
 
