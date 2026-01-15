@@ -47,7 +47,7 @@ export default function CartPage() {
         {/* Empty */}
         {items.length === 0 ? (
           <div className="mt-10 rounded-2xl border border-black/10 bg-black/5 p-8">
-            <p className="text-green-500">Your cart is empty.</p>
+            <p className="text-green-500">Your cart is empty...</p>
             <Link href="/" className="inline-block mt-4 text-green-400 underline">
               Browse menu
             </Link>
