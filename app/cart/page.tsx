@@ -7,8 +7,7 @@ export default function CartPage() {
   const { items, removeItem, clearCart, addItem, total, count } = useCart();
 
   const decQty = (id: string) => {
-    // easiest: remove one by rebuilding list (simple approach for interview test)
-    // we'll do it by removing item completely when qty = 1
+    
     const target = items.find((x) => x.id === id);
     if (!target) return;
 
@@ -17,8 +16,7 @@ export default function CartPage() {
       return;
     }
 
-    // reduce qty by 1 (by removing then adding back qty-1)
-    // simple & safe without changing cart.tsx
+    
     removeItem(id);
     addItem(
       { id: target.id, name: target.name, price: target.price, image: target.image },
@@ -29,7 +27,7 @@ export default function CartPage() {
   return (
     <div className="min-h-screen bg-white text-black">
       <div className="max-w-5xl mx-auto px-6 py-10">
-        {/* Header */}
+        {}
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold">Your Cart</h1>
@@ -44,7 +42,7 @@ export default function CartPage() {
         </Link>
         </div>
 
-        {/* Empty */}
+        
         {items.length === 0 ? (
           <div className="mt-10 rounded-2xl border border-black/10 bg-black/5 p-8">
             <p className="text-green-500">Your cart is empty...</p>
@@ -54,7 +52,7 @@ export default function CartPage() {
           </div>
         ) : (
           <>
-            {/* Items */}
+            
             <div className="mt-8 space-y-4">
               {items.map((it) => (
                 <div
@@ -74,7 +72,7 @@ export default function CartPage() {
                     </p>
                   </div>
 
-                  {/* Qty controls */}
+                 
                   <div className="flex items-center gap-3">
                     <button
                       onClick={() => decQty(it.id)}
@@ -100,12 +98,12 @@ export default function CartPage() {
                     </button>
                   </div>
 
-                  {/* Subtotal */}
+                 
                   <p className="font-bold text-right sm:w-28">
                     ${(it.price * it.qty).toFixed(2)}
                   </p>
 
-                  {/* Remove */}
+                 
                   <button
                     onClick={() => removeItem(it.id)}
                     className="rounded-xl border border-black/20 px-4 py-2 hover:bg-black/10"
@@ -116,7 +114,7 @@ export default function CartPage() {
               ))}
             </div>
 
-            {/* Summary */}
+            
             <div className="mt-10 rounded-2xl border border-black/10 bg-black/5 p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <p className="text-xl font-bold">
                 Total: <span className="text-green-400">${total.toFixed(2)}</span>
